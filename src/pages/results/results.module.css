@@ -1,0 +1,22 @@
+.results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  height: 3.5rem;
+  border-radius: 0.8rem;
+  border: solid 0.1rem #000;
+  background: rgb(217);
+  :hover {
+    color:darkolivegreen;
+  }
+}
+.border {
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.75) -1px 1px 5px 2px;
+  background-color: rgb(216, 216, 216);
+}

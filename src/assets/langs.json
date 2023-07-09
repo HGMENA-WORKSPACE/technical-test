@@ -1,0 +1,12 @@
+{
+  "APP": {
+    "LABEL": {
+      "HOME": "Home",
+      "DRAGDROP": "Drag and Drop",
+      "RESULTS": "Result",
+      "POKEMONS": "POKEMONS",
+      "FAVORITES": "FAVORITES",
+      "NOFAVORITES": "NO FAVORITES"
+    }
+  }
+}

@@ -1,15 +1,47 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { Error, RouterApp } from "./components";
+import "./index.css";
+import { DragDrop, Results } from "./pages";
+import { RouterAppProvider } from "./providers";
+import reportWebVitals from "./reportWebVitals";
+const langs = require("./assets/langs.json");
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterAppProvider
+      routerAppProvider={[
+        {
+          id: langs.APP.LABEL.HOME,
+          path: "/",
+          element: <App />,
+          children: [
+            {
+              id: langs.APP.LABEL.DRAGDROP,
+              path: "drag-drop",
+              canActivate: true,
+              element: <DragDrop />,
+              showElement: <DragDrop />,
+              errorElement: <Error error={404} />,
+            },
+            {
+              id: langs.APP.LABEL.RESULTS,
+              path: "results",
+              canActivate: false,
+              element: <Results />,
+              showElement: <Results />,
+              errorElement: <Error error={404} />,
+            },
+          ],
+        },
+      ]}
+    >
+      <RouterApp />
+    </RouterAppProvider>
   </React.StrictMode>
 );
 
